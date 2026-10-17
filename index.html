@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéWeen Emporium 🎃 | Witch Vinita & Wizard Amit Welcome You!</title>
+  <meta name="description" content="Step into PokéWeen Emporium — Welcomed by High Sorceress Vinita & Archmage Amit! Experience interactive Halloween VFX, sounds, and Pokémon couture from Kanto, Johto, Kalos & Galar.">
+  <meta name="theme-color" content="#9933ff">
+
+  <!-- Google Fonts for Atmospheric Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel+Decorative:wght@700&family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-all region-all portal-locked" id="body-app">
+
+  <!-- VFX Screen Flash Overlay (Lightning / Spell Cast) -->
+  <div class="vfx-screen-flash" id="vfx-flash"></div>
+
+  <!-- VFX Bat Swarm Container -->
+  <div class="vfx-bat-swarm" id="bat-swarm-container"></div>
+
+  <!-- =========================================================================
+       CINEMATIC HALLOWEEN GATE OPENING OVERLAY
+       Welcomed by Witch Vinita & Wizard Amit with Full VFX & Sound
+       ========================================================================= -->
+  <div class="cinematic-portal-overlay" id="cinematic-portal">
+    <!-- Left Gothic Iron Gate Door -->
+    <div class="gate-half gate-left" id="gate-door-left">
+      <div class="gate-iron-bars"></div>
+      <div class="gate-cobwebs">🕸️</div>
+      <div class="gate-torch">🔥</div>
+    </div>
+
+    <!-- Right Gothic Iron Gate Door -->
+    <div class="gate-half gate-right" id="gate-door-right">
+      <div class="gate-iron-bars"></div>
+      <div class="gate-cobwebs">🕸️</div>
+      <div class="gate-torch">🔥</div>
+    </div>
+
+    <!-- Center Cinematic Welcome Shrine -->
+    <div class="portal-welcome-center" id="portal-center-content">
+      <div class="portal-creepy-moon">🌕</div>
+      <div class="portal-badge-pill">⚡ ENTER THE POKÉWEEN DIMENSION ⚡</div>
+
+      <h1 class="portal-main-heading">
+        The Gates of <span class="portal-glow-text">PokéWeen</span>
+      </h1>
+
+      <p class="portal-subheading">
+        High Sorceress <strong>Vinita</strong> & Archmage <strong>Amit</strong> have parted the mists of Kanto, Johto, Kalos & Galar.
+      </p>
+
+      <!-- Welcoming Duo Avatars (Witch Vinita & Wizard Amit) -->
+      <div class="duo-welcome-cards">
+        <!-- Witch Vinita -->
+        <div class="duo-character-card vinita-side">
+          <div class="duo-avatar-frame">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="50" fill="#2d123d" stroke="#d4a853" stroke-width="2"/>
+              <ellipse cx="60" cy="68" rx="18" ry="20" fill="#fce7d2"/>
+              <ellipse cx="54" cy="64" rx="2.5" ry="3.5" fill="#581c87"/>
+              <ellipse cx="66" cy="64" rx="2.5" ry="3.5" fill="#581c87"/>
+              <path d="M56 75 Q60 79 64 75" stroke="#b91c1c" stroke-width="1.8" fill="none"/>
+              <path d="M60 14 L36 54 L84 54 Z" fill="#1e0b2b" stroke="#d4a853" stroke-width="1.5"/>
+              <ellipse cx="60" cy="54" rx="34" ry="9" fill="#2d123d" stroke="#d4a853" stroke-width="1.5"/>
+              <circle cx="60" cy="52" r="3.5" fill="#ff7518"/>
+            </svg>
+          </div>
+          <div class="duo-meta">
+            <h4>Witch Vinita</h4>
+            <span>High Sorceress of Salem & Lavender</span>
+          </div>
+        </div>
+
+        <!-- Center Glowing Seal -->
+        <div class="center-magical-seal">
+          <span class="seal-icon">🎃</span>
+          <div class="seal-glow-orbit"></div>
+        </div>
+
+        <!-- Wizard Amit -->
+        <div class="duo-character-card amit-side">
+          <div class="duo-avatar-frame">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="50" fill="#0b172a" stroke="#38bdf8" stroke-width="2"/>
+              <!-- Wizard Amit Hood & Robes -->
+              <path d="M60 16 C40 18, 30 45, 34 68 C38 95, 82 95, 86 68 C90 45, 80 18, 60 16 Z" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+              <ellipse cx="60" cy="68" rx="18" ry="20" fill="#fed7aa"/>
+              <!-- Glowing Blue Archmage Eyes -->
+              <ellipse cx="54" cy="64" rx="3" ry="4" fill="#00f0ff" filter="drop-shadow(0 0 4px #00f0ff)"/>
+              <ellipse cx="66" cy="64" rx="3" ry="4" fill="#00f0ff" filter="drop-shadow(0 0 4px #00f0ff)"/>
+              <circle cx="55" cy="63" r="1" fill="#fff"/>
+              <circle cx="67" cy="63" r="1" fill="#fff"/>
+              <path d="M57 76 Q60 79 63 76" stroke="#475569" stroke-width="1.5" fill="none"/>
+              <!-- Wizard Runic Circlet & Forehead Gem -->
+              <path d="M38 52 Q60 48 82 52" stroke="#ffd700" stroke-width="3" fill="none"/>
+              <polygon points="60,45 64,52 60,57 56,52" fill="#00f0ff"/>
+              <!-- Crystal Staff topper in hand -->
+              <circle cx="28" cy="40" r="7" fill="#38bdf8" filter="drop-shadow(0 0 8px #38bdf8)"/>
+              <line x1="28" y1="47" x2="28" y2="90" stroke="#78350f" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="duo-meta">
+            <h4>Wizard Amit</h4>
+            <span>Archmage of Burned Tower & Void</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Welcome Quote Bubble from Both -->
+      <div class="portal-dialogue-bubble">
+        <span class="dialogue-quote">💬</span>
+        <p>
+          <strong>Vinita & Amit:</strong> "Halt, mortal Trainer! Before thee lies the ultimate Halloween Emporium. Prepare thy senses for spectral chimes, bubbling potions, and regional relics!"
+        </p>
+      </div>
+
+      <!-- Grand Interactive Unlock Button -->
+      <button class="btn btn-primary btn-portal-enter" id="btn-unlock-portal" onclick="unlockHalloweenRealm()">
+        <span class="btn-portal-glow"></span>
+        <span class="btn-icon">⚡</span>
+        <span>UNSEAL THE GATES WITH SOUND & VFX 🎃</span>
+      </button>
+
+      <span class="portal-tap-hint">⚠️ Warning: Contains spooky chimes, lightning VFX, and ghost cries!</span>
+    </div>
+  </div>
+
+  <!-- Floating Atmosphere Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Witching Hour Sky Overlay -->
+  <div class="sky-overlay" id="sky-overlay"></div>
+
+  <!-- Flying Ghost Pokémon Target (Catch Mini-Game) -->
+  <div class="flying-ghost-target" id="flying-ghost" onclick="catchGhostPokemon(event)" title="CATCH ME!">
+    <span class="ghost-emoji" id="ghost-target-emoji">👻</span>
+    <span class="catch-bubble">Catch Me!</span>
+  </div>
+
+  <!-- Audio Player Floating Bar with Pokémon Sound Effects -->
+  <div class="sound-controls" id="sound-controls" title="Halloween Pokémon Audio Experience">
+    <button class="sound-btn" id="sound-toggle-btn" aria-label="Toggle Halloween Ambience">
+      <i data-lucide="volume-x" id="sound-icon"></i>
+      <span class="sound-label">8-Bit Lavender Beats: <strong id="sound-status">OFF</strong></span>
+    </button>
+    <div class="sound-pills">
+      <button class="sound-fx-btn" id="sfx-vinita" title="Vinita's Spell Cackle">🧙‍♀️ Vinita</button>
+      <button class="sound-fx-btn" id="sfx-amit" title="Amit's Thunder Staff">⚡ Amit</button>
+      <button class="sound-fx-btn" id="sfx-gengar" title="Gengar Laughter (Kanto)">😈 Gengar</button>
+      <button class="sound-fx-btn" id="sfx-houndoom" title="Houndoom Howl (Johto)">🐺 Houndoom</button>
+      <button class="sound-fx-btn" id="sfx-gourgeist" title="Gourgeist Giggle (Kalos)">🎃 Kalos</button>
+      <button class="sound-fx-btn" id="sfx-polteageist" title="Polteageist Whistle (Galar)">☕ Galar</button>
+    </div>
+  </div>
+
+  <!-- Top Announcement Ticker -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="ticker-content">
+      <span>🧙‍♀️ <strong>WITCH VINITA:</strong> 31% OFF WITH CODE <strong class="badge-code">VINITA31</strong></span>
+      <span>⚡ <strong>WIZARD AMIT:</strong> ARCHMAGE 31% BOON WITH CODE <strong class="badge-code">AMIT31</strong></span>
+      <span>🟣 <strong>KANTO:</strong> LAVENDER TOWN GHOST TOWER REPUTATION ITEMS AVAILABLE</span>
+      <span>🌙 <strong>JOHTO:</strong> BURNED TOWER HOUNDOOM & MISDREAVUS VELVET DROPS</span>
+      <span>🎃 <strong>KALOS:</strong> SUPER-SIZE PUMPKABOO & GOURGEIST COVEN COUTURE</span>
+      <span>☕ <strong>GALAR:</strong> GLIMWOOD TANGLE POLTEAGEIST HAUNTED TEAPOTS & HOODIES</span>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="main-header">
+    <div class="header-inner container">
+      <!-- Logo -->
+      <a href="#home" class="brand-logo" id="brand-logo" onclick="switchCategory('all')">
+        <div class="logo-emblem">
+          <span class="pumpkin-icon">🎃</span>
+          <div class="bat-wings">
+            <span class="bat-wing left-wing"></span>
+            <span class="bat-wing right-wing"></span>
+          </div>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">PokéWeen</span>
+          <span class="brand-tagline" id="brand-sub">Witch Vinita & Wizard Amit</span>
+        </div>
+      </a>
+
+      <!-- Category Navigation (The Soul of the Site) -->
+      <nav class="category-nav" aria-label="Main Categories">
+        <button class="nav-tab active" data-cat="all" onclick="switchCategory('all')">
+          <span class="nav-icon">🏰</span>
+          <span class="nav-title">All Realms</span>
+        </button>
+        <button class="nav-tab kids-tab" data-cat="kids" onclick="switchCategory('kids')">
+          <span class="nav-icon">🍭</span>
+          <span class="nav-title">Little Mimikyus</span>
+          <span class="tab-badge">Kids</span>
+        </button>
+        <button class="nav-tab women-tab" data-cat="women" onclick="switchCategory('women')">
+          <span class="nav-icon">🔮</span>
+          <span class="nav-title">Vinita's Coven</span>
+          <span class="tab-badge">Women</span>
+        </button>
+        <button class="nav-tab men-tab" data-cat="men" onclick="switchCategory('men')">
+          <span class="nav-icon">🐺</span>
+          <span class="nav-title">Amit's Crypt</span>
+          <span class="tab-badge">Men</span>
+        </button>
+        <button class="nav-tab decor-tab" data-cat="decor" onclick="switchCategory('decor')">
+          <span class="nav-icon">🕯️</span>
+          <span class="nav-title">Litwick Manor</span>
+          <span class="tab-badge">Decor</span>
+        </button>
+      </nav>
+
+      <!-- Action Tools -->
+      <div class="header-actions">
+        <!-- Re-Enter Gate Button -->
+        <button class="action-btn" onclick="relockGates()" title="Relock & Re-enter Cinematic Gate VFX">
+          <span style="font-size: 1.1rem;">🚪</span>
+        </button>
+
+        <!-- Blood Moon / Twilight Mode -->
+        <button class="action-btn moon-btn" id="moon-toggle-btn" title="Toggle Blood Moon Eclipse Mode" aria-label="Toggle Blood Moon mode">
+          <i data-lucide="moon"></i>
+          <span class="action-tooltip">Blood Moon</span>
+        </button>
+
+        <!-- Trick or Treat Wheel -->
+        <button class="action-btn fortune-btn" id="wheel-open-btn" title="Spin The Wheel of Doom!" aria-label="Spin wheel for discounts">
+          <span class="fortune-icon">🎡</span>
+          <span class="fortune-pulse"></span>
+        </button>
+
+        <!-- Wishlist -->
+        <button class="action-btn wishlist-btn" id="wishlist-btn" onclick="toggleWishlistDrawer()" title="Soul Bound Wishlist" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="badge-count" id="wishlist-count">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="action-btn cart-btn" id="cart-btn" onclick="toggleCartDrawer()" title="Cauldron of Goods" aria-label="Shopping Cart">
+          <span class="cart-icon-wrapper">
+            <span class="cauldron-emoji">🍲</span>
+            <span class="cauldron-bubbles">
+              <i></i><i></i><i></i>
+            </span>
+          </span>
+          <div class="cart-btn-info">
+            <span class="cart-btn-label">Cauldron</span>
+            <span class="cart-btn-price" id="header-cart-total">$0.00</span>
+          </div>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sorceress Vinita & Wizard Amit Dual Showcase Shrine -->
+  <section class="vinita-shrine-section container">
+    <div class="vinita-card dual-shrine-card">
+      <div class="dual-leaders-avatars">
+        <!-- Witch Vinita Avatar -->
+        <div class="leader-avatar-box">
+          <div class="vinita-portrait">
+            <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="80" cy="80" r="75" fill="#2d123d" stroke="#d4a853" stroke-width="3"/>
+              <ellipse cx="80" cy="88" rx="22" ry="25" fill="#fce7d2"/>
+              <ellipse cx="73" cy="84" rx="3.5" ry="4.5" fill="#581c87"/>
+              <ellipse cx="87" cy="84" rx="3.5" ry="4.5" fill="#581c87"/>
+              <circle cx="74" cy="83" r="1.2" fill="#fff"/>
+              <circle cx="88" cy="83" r="1.2" fill="#fff"/>
+              <path d="M75 97 Q80 102 85 97" stroke="#b91c1c" stroke-width="2" fill="none"/>
+              <path d="M80 70 L82 74 L80 78 L78 74 Z" fill="#ffd700"/>
+              <path d="M80 18 L48 68 L112 68 Z" fill="#1e0b2b" stroke="#d4a853" stroke-width="2"/>
+              <ellipse cx="80" cy="68" rx="46" ry="12" fill="#2d123d" stroke="#d4a853" stroke-width="2"/>
+              <rect x="58" y="62" width="44" height="6" fill="#ffd700"/>
+              <circle cx="80" cy="65" r="5" fill="#ff7518"/>
+            </svg>
+          </div>
+          <span class="leader-tag-name">🧙‍♀️ Witch Vinita</span>
+        </div>
+
+        <div class="shrine-arcane-spark">⚡✨⚡</div>
+
+        <!-- Wizard Amit Avatar -->
+        <div class="leader-avatar-box">
+          <div class="vinita-portrait amit-portrait">
+            <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="80" cy="80" r="75" fill="#0b172a" stroke="#38bdf8" stroke-width="3"/>
+              <path d="M80 20 C50 24, 38 60, 44 92 C50 128, 110 128, 116 92 C122 60, 110 24, 80 20 Z" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+              <ellipse cx="80" cy="90" rx="24" ry="26" fill="#fed7aa"/>
+              <ellipse cx="72" cy="85" rx="4.5" ry="5.5" fill="#00f0ff" filter="drop-shadow(0 0 6px #00f0ff)"/>
+              <ellipse cx="88" cy="85" rx="4.5" ry="5.5" fill="#00f0ff" filter="drop-shadow(0 0 6px #00f0ff)"/>
+              <circle cx="73" cy="84" r="1.5" fill="#fff"/>
+              <circle cx="89" cy="84" r="1.5" fill="#fff"/>
+              <path d="M76 102 Q80 106 84 102" stroke="#334155" stroke-width="2" fill="none"/>
+              <path d="M50 70 Q80 64 110 70" stroke="#ffd700" stroke-width="4" fill="none"/>
+              <polygon points="80,58 86,68 80,75 74,68" fill="#00f0ff"/>
+            </svg>
+          </div>
+          <span class="leader-tag-name">⚡ Wizard Amit</span>
+        </div>
+      </div>
+
+      <div class="vinita-content">
+        <div class="vinita-header-line">
+          <span class="vinita-badge">🎃 Coven & Void Masters</span>
+          <span class="vinita-lore-badge">Salem • Lavender Town • Ecruteak Tower</span>
+        </div>
+        <h3 class="vinita-title">Witch Vinita & Wizard Amit Welcome You!</h3>
+        <p class="vinita-quote" id="vinita-dynamic-quote">
+          "Hail, Pokémon Trainer! Together, we have forged this Halloween dimension. Vinita weaves the velvet ghost-type enchantments, while Amit commands shadow thunder and dark-type hexes. Choose your patron or combine our dual spells for maximum power!"
+        </p>
+        <div class="vinita-actions">
+          <button class="btn btn-secondary btn-sm" onclick="triggerVinitaBlessing()">
+            <span>🧙‍♀️ Vinita's Spell (31% OFF)</span>
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="triggerAmitBoon()">
+            <span>⚡ Amit's Thunder Boon (31% OFF)</span>
+          </button>
+          <button class="btn btn-secondary btn-sm" onclick="triggerLightningFlashVFX()">
+            <span>🌩️ Trigger Lightning VFX</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Regional Warp Portal Bar (Kanto, Johto, Kalos, Galar) -->
+  <section class="region-warp-section container">
+    <div class="region-warp-header">
+      <div class="warp-label">
+        <span class="warp-pulse"></span>
+        <span>Dimensional Pokémon Warp Gates</span>
+      </div>
+      <span class="warp-sub">Choose a region to shift atmospheric gravity, music, and catalog relics:</span>
+    </div>
+    <div class="region-gates-grid">
+      <div class="region-gate-card active" data-region="all" onclick="selectRegion('all')">
+        <div class="gate-icon">🌐</div>
+        <div class="gate-info">
+          <h4>All 4 Regions</h4>
+          <p>Global Halloween Nexus</p>
+        </div>
+      </div>
+      <div class="region-gate-card gate-kanto" data-region="kanto" onclick="selectRegion('kanto')">
+        <div class="gate-icon">🟣</div>
+        <div class="gate-info">
+          <h4>Kanto Realm</h4>
+          <p>Lavender Town & Gengar</p>
+        </div>
+        <span class="gate-badge">Gen 1 Spooks</span>
+      </div>
+      <div class="region-gate-card gate-johto" data-region="johto" onclick="selectRegion('johto')">
+        <div class="gate-icon">🌙</div>
+        <div class="gate-info">
+          <h4>Johto Realm</h4>
+          <p>Burned Tower & Houndoom</p>
+        </div>
+        <span class="gate-badge">Gen 2 Shadows</span>
+      </div>
+      <div class="region-gate-card gate-kalos" data-region="kalos" onclick="selectRegion('kalos')">
+        <div class="gate-icon">🎃</div>
+        <div class="gate-info">
+          <h4>Kalos Realm</h4>
+          <p>Laverre & Gourgeist</p>
+        </div>
+        <span class="gate-badge">Gen 6 Fairy-Ghost</span>
+      </div>
+      <div class="region-gate-card gate-galar" data-region="galar" onclick="selectRegion('galar')">
+        <div class="gate-icon">☕</div>
+        <div class="gate-info">
+          <h4>Galar Realm</h4>
+          <p>Glimwood & Polteageist</p>
+        </div>
+        <span class="gate-badge">Gen 8 Poltergeist</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Feature: Vinita & Amit's Cauldron Potion Brewery Mini-Game -->
+  <section class="cauldron-minigame-section container">
+    <div class="cauldron-game-card">
+      <div class="game-instructions">
+        <span class="game-badge">🧪 INTERACTIVE POTION LAB</span>
+        <h3>Vinita & Amit's Cauldron Brewery</h3>
+        <p>Drop 2 or more regional ingredients into the boiling cauldron to brew a secret Halloween voucher potion!</p>
+      </div>
+
+      <div class="game-stage">
+        <!-- Ingredients Shelf -->
+        <div class="ingredients-shelf">
+          <div class="ingredient-item" onclick="dropIngredient('kanto', '💜 Lavender Town Ectoplasm')">
+            <span class="ing-glyph">🧪</span>
+            <div class="ing-meta">
+              <strong>Lavender Ectoplasm</strong>
+              <span>Kanto Region</span>
+            </div>
+            <button class="btn-add-ing">+ Drop</button>
+          </div>
+
+          <div class="ingredient-item" onclick="dropIngredient('johto', '🌙 Burned Tower Ash & Moonlight')">
+            <span class="ing-glyph">🌑</span>
+            <div class="ing-meta">
+              <strong>Burned Tower Ash</strong>
+              <span>Johto Region</span>
+            </div>
+            <button class="btn-add-ing">+ Drop</button>
+          </div>
+
+          <div class="ingredient-item" onclick="dropIngredient('kalos', '🎃 Giant Gourgeist Pumpkin Pulp')">
+            <span class="ing-glyph">🎃</span>
+            <div class="ing-meta">
+              <strong>Gourgeist Pulp</strong>
+              <span>Kalos Region</span>
+            </div>
+            <button class="btn-add-ing">+ Drop</button>
+          </div>
+
+          <div class="ingredient-item" onclick="dropIngredient('galar', '☕ Polteageist Cursed Black Tea')">
+            <span class="ing-glyph">🫖</span>
+            <div class="ing-meta">
+              <strong>Polteageist Tea Leaf</strong>
+              <span>Galar Region</span>
+            </div>
+            <button class="btn-add-ing">+ Drop</button>
+          </div>
+        </div>
+
+        <!-- The Big Boiling Interactive Cauldron -->
+        <div class="cauldron-interactive-pot" id="interactive-cauldron">
+          <div class="cauldron-steam" id="cauldron-steam"></div>
+          <div class="cauldron-brew-liquid" id="cauldron-brew-liquid">
+            <div class="bubble-layer">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="cauldron-pot-body">
+            <span class="cauldron-symbol">🍲</span>
+            <div class="cauldron-glow-ring"></div>
+          </div>
+          <div class="cauldron-dropped-tags" id="cauldron-dropped-tags">
+            <span class="empty-brew-hint">Drop ingredients above to stir brew...</span>
+          </div>
+          <button class="btn btn-primary btn-brew-magic" id="btn-brew-magic" onclick="brewPotionNow()" disabled>
+            <span>✨ Stir & Brew Potion</span>
+          </button>
+        </div>
+
+        <!-- Brew Result Showcase -->
+        <div class="brew-result-card" id="brew-result-card">
+          <span class="potion-bottle-icon" id="potion-bottle-icon">⚗️</span>
+          <h4 id="potion-name">Awaiting Ingredients</h4>
+          <p id="potion-desc">Combine items from Kanto, Johto, Kalos or Galar to awaken ancient spells!</p>
+          <div class="potion-code-wrap" id="potion-code-wrap" style="display: none;">
+            <span>Secret Promo:</span>
+            <strong id="potion-code-text">POKEMAGIC</strong>
+            <button class="btn-copy-code" onclick="copyBrewCode()">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Hero Banner with Dynamic Realm Transitions -->
+  <section class="hero-section" id="hero-banner">
+    <div class="hero-bg-graphic" id="hero-graphic"></div>
+    <div class="container hero-content">
+      <div class="hero-badge" id="hero-badge">
+        <span class="badge-icon">👻</span>
+        <span id="hero-badge-text">Witch Vinita & Wizard Amit Welcome You</span>
+      </div>
+      
+      <h1 class="hero-title" id="hero-title">
+        The Realm of <span class="highlight-text" id="hero-highlight">PokéWeen Sorcery</span>
+      </h1>
+      
+      <p class="hero-subtitle" id="hero-subtitle">
+        Summon frightfully stylish Pokémon apparel from Kanto, Johto, Kalos, and Galar across all four dimensions.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn btn-primary" onclick="scrollToProducts()">
+          <span class="btn-icon">⚡</span>
+          <span id="hero-cta-text">Explore The Catalog</span>
+        </button>
+        <button class="btn btn-secondary" onclick="openWheelModal()">
+          <span class="btn-icon">🎁</span>
+          <span>Spin Vinita & Amit's Wheel</span>
+        </button>
+      </div>
+
+      <!-- Quick Category Quick-Select Pills on Hero -->
+      <div class="realm-cards-preview">
+        <div class="realm-card-mini card-kids" onclick="switchCategory('kids')">
+          <div class="realm-icon">⚡</div>
+          <div class="realm-meta">
+            <h4>Little Mimikyus</h4>
+            <p>Cute Kids Pokémon Wear</p>
+          </div>
+        </div>
+        <div class="realm-card-mini card-women" onclick="switchCategory('women')">
+          <div class="realm-icon">🔮</div>
+          <div class="realm-meta">
+            <h4>Vinita's Coven</h4>
+            <p>Witchy Velvet & Mismagius</p>
+          </div>
+        </div>
+        <div class="realm-card-mini card-men" onclick="switchCategory('men')">
+          <div class="realm-icon">😈</div>
+          <div class="realm-meta">
+            <h4>Amit's Crypt</h4>
+            <p>Brutal Shadow Horror Wear</p>
+          </div>
+        </div>
+        <div class="realm-card-mini card-decor" onclick="switchCategory('decor')">
+          <div class="realm-icon">🕯️</div>
+          <div class="realm-meta">
+            <h4>Litwick Manor</h4>
+            <p>Haunted Pokémon Decor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Dynamic Realm Portal Notification -->
+  <div class="realm-announcer" id="realm-announcer" aria-live="polite">
+    <span class="portal-symbol">✨</span>
+    <span class="portal-msg" id="portal-msg">Welcome to Witch Vinita & Wizard Amit's PokéWeen Bazaar</span>
+  </div>
+
+  <!-- Main Store Layout -->
+  <main class="store-main container" id="products-section">
+    <!-- Controls Toolbar (Search, Filter, Sorting) -->
+    <div class="store-controls-card">
+      <div class="search-bar-wrap">
+        <i data-lucide="search" class="search-icon"></i>
+        <input 
+          type="text" 
+          id="product-search" 
+          placeholder="Summon Pokémon items (e.g. Kanto, Johto, Kalos, Galar, Mimikyu, Gengar, Gourgeist, Polteageist)..."
+          autocomplete="off"
+        >
+        <button class="clear-search-btn" id="clear-search-btn" style="display: none;">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Sub-filter Tags -->
+      <div class="filter-tags" id="subfilter-tags">
+        <button class="tag-chip active" data-tag="all">All Items</button>
+        <button class="tag-chip" data-tag="costume">Costumes</button>
+        <button class="tag-chip" data-tag="apparel">Daily Wear</button>
+        <button class="tag-chip" data-tag="accessories">Accessories</button>
+        <button class="tag-chip" data-tag="potion">Vinita & Amit's Potions</button>
+      </div>
+
+      <!-- Sort & Price Filter -->
+      <div class="sort-filter-group">
+        <div class="control-select-wrap">
+          <label for="price-range">Max PokéGold: <strong id="price-val">$250</strong></label>
+          <input type="range" id="price-range" min="10" max="250" step="5" value="250">
+        </div>
+
+        <div class="control-select-wrap">
+          <label for="sort-select">Sort Spirits:</label>
+          <select id="sort-select">
+            <option value="featured">🔮 Vinita & Amit's Top Picks</option>
+            <option value="price-asc">🪙 PokéGold: Low to High</option>
+            <option value="price-desc">💰 PokéGold: High to Low</option>
+            <option value="rating">⭐ Highest Cursed Rating</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Realm Theme Badge Header -->
+    <div class="current-realm-header" id="realm-banner-strip">
+      <div class="realm-title-box">
+        <span class="realm-glyph" id="realm-glyph">🏰</span>
+        <div>
+          <h2 class="realm-title" id="realm-title">The Grand PokéWeen Bazaar</h2>
+          <p class="realm-desc" id="realm-desc">Browsing all otherworldly Pokémon curiosities and witchy gear.</p>
+        </div>
+      </div>
+      <div class="realm-stats" id="realm-stats">
+        <span id="product-count-badge">Showing 16 Items</span>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="products-grid">
+      <!-- Populated via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="empty-state" style="display: none;">
+      <div class="empty-icon">🦇</div>
+      <h3>No Pokémon Spirits Found</h3>
+      <p>The shadows yielded no items matching your incantation. Try adjusting your search, region, or filters.</p>
+      <button class="btn btn-secondary" onclick="resetFilters()">Reset Incantations</button>
+    </div>
+  </main>
+
+  <!-- Interactive Feature: Spooky Mystery Wheel Modal -->
+  <div class="modal-backdrop" id="wheel-modal">
+    <div class="modal-card wheel-modal-card">
+      <button class="modal-close" onclick="closeWheelModal()">&times;</button>
+      <div class="wheel-header">
+        <span class="wheel-badge">🎃 VINITA & AMIT'S MYSTERY BOON</span>
+        <h2>The PokéWeen Wheel of Doom</h2>
+        <p>Spin once per moon cycle to unlock enchanted vouchers and Pokémon treats!</p>
+      </div>
+      
+      <div class="wheel-container">
+        <div class="wheel-pointer">▼</div>
+        <div class="wheel-disc" id="wheel-disc">
+          <div class="wheel-slice slice-1"><span>31% OFF</span></div>
+          <div class="wheel-slice slice-2"><span>AMIT HEX ⚡</span></div>
+          <div class="wheel-slice slice-3"><span>25% OFF</span></div>
+          <div class="wheel-slice slice-4"><span>RARE CANDY</span></div>
+          <div class="wheel-slice slice-5"><span>15% OFF</span></div>
+          <div class="wheel-slice slice-6"><span>VINITA HUG</span></div>
+        </div>
+        <button class="wheel-spin-btn" id="spin-btn" onclick="spinWheel()">SPIN!</button>
+      </div>
+
+      <div class="wheel-result" id="wheel-result">
+        <!-- Result text here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal (Crystal Ball Quick View) -->
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-card product-modal-card">
+      <button class="modal-close" onclick="closeQuickview()">&times;</button>
+      <div class="modal-product-body" id="modal-product-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Drawer (Cauldron) -->
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span class="header-cauldron">🍲</span>
+        <div>
+          <h3>Vinita & Amit's Cauldron</h3>
+          <p class="drawer-sub" id="cart-drawer-sub">0 cursed curios collected</p>
+        </div>
+      </div>
+      <button class="drawer-close" onclick="toggleCartDrawer()">&times;</button>
+    </div>
+
+    <!-- Free Delivery Progress Bar -->
+    <div class="shipping-meter">
+      <div class="meter-text" id="meter-text">Add $50.00 more for Free Haunter Express Delivery!</div>
+      <div class="meter-track">
+        <div class="meter-fill" id="meter-fill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-items-container" id="cart-items-container">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Empty Cart Screen -->
+    <div class="cart-empty-state" id="cart-empty" style="display: none;">
+      <span class="empty-cauldron-icon">🕸️</span>
+      <h4>Your Cauldron is Empty</h4>
+      <p>Brew up some spooky vibes by adding Mimikyu hoodies, Vinita's velvet dresses, or Amit's shadow gear!</p>
+      <button class="btn btn-primary" onclick="toggleCartDrawer(); scrollToProducts();">Start Gathering</button>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-footer" id="cart-footer">
+      <!-- Promo Code Field -->
+      <div class="promo-box">
+        <input type="text" id="promo-code-input" placeholder="Promo code (e.g. VINITA31 / AMIT31)" uppercase>
+        <button class="btn-promo" onclick="applyPromoCode()">Apply</button>
+      </div>
+      <div class="promo-msg" id="promo-msg"></div>
+
+      <!-- Pricing Summary -->
+      <div class="pricing-breakdown">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="price-row" id="row-discount" style="display: none;">
+          <span class="discount-label">Spooky Discount (<span id="discount-pct">0%</span>)</span>
+          <span class="discount-amt" id="cart-discount">-$0.00</span>
+        </div>
+        <div class="price-row">
+          <span>Haunter Express Shipping</span>
+          <span id="cart-shipping">$0.00</span>
+        </div>
+        <div class="price-row total-row">
+          <span>Total PokéGold</span>
+          <span class="final-total" id="cart-total">$0.00</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="cart-actions">
+        <button class="btn btn-primary btn-checkout" onclick="openCheckoutModal()">
+          <span>Proceed to Ritual Checkout 🦇</span>
+        </button>
+        <button class="btn-clear-cart" onclick="clearCart()">Empty Cauldron</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Wishlist Drawer (Soul Bound) -->
+  <aside class="cart-drawer" id="wishlist-drawer" aria-label="Wishlist">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span class="header-cauldron">🖤</span>
+        <div>
+          <h3>Soul Bound Vault</h3>
+          <p class="drawer-sub" id="wishlist-drawer-sub">Saved artifacts of affection</p>
+        </div>
+      </div>
+      <button class="drawer-close" onclick="toggleWishlistDrawer()">&times;</button>
+    </div>
+
+    <div class="cart-items-container" id="wishlist-items-container">
+      <!-- Injected by JS -->
+    </div>
+
+    <div class="cart-empty-state" id="wishlist-empty" style="display: none;">
+      <span class="empty-cauldron-icon">🥀</span>
+      <h4>No Souls Bound Yet</h4>
+      <p>Tap the heart on any Pokémon treasure to bind it to your crypt wishlist!</p>
+    </div>
+  </aside>
+
+  <!-- Checkout Ritual Modal -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-card checkout-modal-card">
+      <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
+      <div class="checkout-header">
+        <span class="checkout-glyph">📜</span>
+        <h2>Finalize Spooky Order</h2>
+        <p>Witch Vinita, Wizard Amit & their Haunters will dispatch your package across Kanto, Johto, Kalos & Galar.</p>
+      </div>
+
+      <form id="checkout-form" onsubmit="processRitualOrder(event)">
+        <div class="form-group-row">
+          <div class="form-group">
+            <label>Trainer / Mortal Name *</label>
+            <input type="text" required placeholder="Ash Ketchum / Lady Vinita / Archmage Amit">
+          </div>
+          <div class="form-group">
+            <label>Rotom Phone / Email *</label>
+            <input type="email" required placeholder="trainer@pokeween.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Crypt / Manor Address *</label>
+          <input type="text" required placeholder="13 Ghost Tower Way, Lavender Town">
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label>Region & Realm *</label>
+            <select required class="region-select-box">
+              <option value="kanto">🟣 Kanto (Lavender Town)</option>
+              <option value="johto">🌙 Johto (Ecruteak City)</option>
+              <option value="kalos">🎃 Kalos (Laverre City)</option>
+              <option value="galar">☕ Galar (Glimwood Tangle)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Hex / Zip Code *</label>
+            <input type="text" required placeholder="09494">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Offering</label>
+          <div class="payment-pills">
+            <label class="pay-pill active">
+              <input type="radio" name="paymethod" checked>
+              <span>🪙 PokéDollars</span>
+            </label>
+            <label class="pay-pill">
+              <input type="radio" name="paymethod">
+              <span>🔮 Shadow Card</span>
+            </label>
+            <label class="pay-pill">
+              <input type="radio" name="paymethod">
+              <span>🍬 Rare Candy Barter</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="checkout-summary-box">
+          <div class="summary-line">
+            <span>Treasures Count:</span>
+            <strong id="ritual-count">0 items</strong>
+          </div>
+          <div class="summary-line highlight">
+            <span>Ritual Total:</span>
+            <strong id="ritual-total">$0.00</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit-order" id="order-submit-btn">
+          <span>Summon Haunter Delivery 🎃</span>
+        </button>
+      </form>
+
+      <!-- Order Confirmed Celebration Screen -->
+      <div class="order-success-screen" id="order-success-screen" style="display: none;">
+        <div class="success-bats" id="success-bats">🦇 👻 🦇</div>
+        <div class="success-pumpkin">🎃</div>
+        <h3>The Ritual is Complete!</h3>
+        <p>Order <strong>#POKE-<span id="success-order-id">777</span></strong> consecrated by Witch Vinita & Wizard Amit.</p>
+        <p class="success-note">A ghostly Haunter has been dispatched with spectral tracking coordinates across your region.</p>
+        <button class="btn btn-primary" onclick="closeCheckoutModal(); resetStoreAfterOrder();">Return to Emporium</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <span class="pumpkin-icon">🎃</span>
+          <span class="brand-name">PokéWeen</span>
+        </div>
+        <p>The premier dimensional Halloween marketplace uniting Kanto, Johto, Kalos & Galar ghost Pokémon, overseen by High Sorceress Vinita & Archmage Amit since 1692.</p>
+        <div class="social-links">
+          <span class="social-pill" title="Grimoire">📜 Grimoire</span>
+          <span class="social-pill" title="Covengram">🔮 Covengram</span>
+          <span class="social-pill" title="RotomDex">⚡ RotomDex</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Spooky Sections</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="switchCategory('kids')">🍭 Little Mimikyus (Kids)</a></li>
+          <li><a href="javascript:void(0)" onclick="switchCategory('women')">🔮 Vinita's Coven (Women)</a></li>
+          <li><a href="javascript:void(0)" onclick="switchCategory('men')">🐺 Amit's Crypt (Men)</a></li>
+          <li><a href="javascript:void(0)" onclick="switchCategory('decor')">🕯️ Litwick Manor (Decor)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Regional Portals</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="selectRegion('kanto')">🟣 Kanto (Lavender Crypt)</a></li>
+          <li><a href="javascript:void(0)" onclick="selectRegion('johto')">🌙 Johto (Burned Tower)</a></li>
+          <li><a href="javascript:void(0)" onclick="selectRegion('kalos')">🎃 Kalos (Laverre Mansion)</a></li>
+          <li><a href="javascript:void(0)" onclick="selectRegion('galar')">☕ Galar (Glimwood Tangle)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4>Join The Coven & Void Guild</h4>
+        <p>Receive secret moon phase sales, rare regional Pokémon stencils, and witchy discounts from Vinita & Amit.</p>
+        <div class="newsletter-form">
+          <input type="email" id="coven-email" placeholder="enter your email...">
+          <button class="btn btn-primary" onclick="subscribeCoven()">Join</button>
+        </div>
+        <span class="newsletter-status" id="coven-status"></span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 PokéWeen Emporium • Sorceress Vinita & Wizard Amit. Handcrafted with pure HTML, CSS & JavaScript.</p>
+        <div class="footer-moon-phase">
+          <span>Current Moon: 🌕 Full Harvest Moon</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
